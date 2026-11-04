@@ -12,7 +12,6 @@ import {
   X,
   Check,
   AlertCircle,
-  Sparkles,
   Layers,
 } from "lucide-react";
 

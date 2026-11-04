@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Coins, Plus, Trash2, X, Check, AlertCircle, Sparkles, Tag } from "lucide-react";
+import { Coins, Plus, Trash2, X, Check, AlertCircle, Tag } from "lucide-react";
 
 export default function AdminCouponsPage() {
   const [coupons, setCoupons] = useState([]);

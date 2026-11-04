@@ -16,7 +16,6 @@ import {
   Video,
   Coins,
   ChevronDown,
-  Sparkles,
   Heart,
   Share2,
 } from "lucide-react";

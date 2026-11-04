@@ -793,7 +793,7 @@ export default function CategoryNav({ activeCategory, onSelectCategory }) {
         </div>
       </div>
 
-      {/* 🌟 TRENDIA-STYLE REAL-TIME HOVER IMAGE & TITLE SWAPPING MEGA MENU */}
+      {/*  TRENDIA-STYLE REAL-TIME HOVER IMAGE & TITLE SWAPPING MEGA MENU */}
       <AnimatePresence>
         {hoveredId && activeItem?.dropdown && (
           <motion.div

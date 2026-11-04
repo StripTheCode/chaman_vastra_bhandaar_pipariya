@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { User, Lock, Eye, EyeOff, ArrowRight, AlertCircle, Sparkles, ArrowLeft } from "lucide-react";
+import { User, Lock, Eye, EyeOff, ArrowRight, AlertCircle, Gift, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
 export default function LoginPage() {
@@ -194,7 +194,7 @@ export default function LoginPage() {
 
         {/* Member Privilege Note */}
         <div className="mt-4 p-3 rounded-xl bg-[#FAF6EE] border border-[#EADBCA] flex items-center justify-center gap-2 text-[11.5px] text-[#8C6510] font-medium text-center">
-          <Sparkles className="w-3.5 h-3.5 text-[#C59B27] shrink-0" />
+          <Gift className="w-3.5 h-3.5 text-[#C59B27] shrink-0" />
           <span>New members get 100 Free Chaman Coins upon signing up!</span>
         </div>
 
@@ -207,3 +207,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

@@ -13,7 +13,7 @@ import {
   Check,
   ShieldCheck,
   ArrowRight,
-  Sparkles,
+  Award,
   Phone,
   Mail,
   Clock,
@@ -297,7 +297,7 @@ function AccountContent() {
                 {/* Privilege Benefits Sidecard */}
                 <div className="bg-[#FCFAF5] rounded-3xl p-6 border border-[#EADBCA] space-y-4">
                   <h4 className="font-serif text-base font-bold text-[#19181B] flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#C59B27]" />
+                    <Award className="w-4 h-4 text-[#C59B27]" />
                     <span>Your Membership Perks</span>
                   </h4>
                   <ul className="space-y-3 text-xs text-[#5A5348]">

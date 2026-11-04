@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { User, Mail, Phone, Lock, Eye, EyeOff, ArrowRight, AlertCircle, Sparkles, ArrowLeft, Coins } from "lucide-react";
+import { User, Mail, Phone, Lock, Eye, EyeOff, ArrowRight, AlertCircle, ArrowLeft, Coins } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
 export default function RegisterPage() {
@@ -260,3 +260,4 @@ export default function RegisterPage() {
     </div>
   );
 }
+

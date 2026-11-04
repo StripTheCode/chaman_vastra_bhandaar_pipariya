@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Heart, Eye, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart, Eye, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { PRODUCTS, CURRENCIES } from "@/data/products";
 
 export default function YouMayAlsoLike({ currentProductId, category, onSelectProduct, currentCurrency = "INR" }) {
@@ -38,7 +38,7 @@ export default function YouMayAlsoLike({ currentProductId, category, onSelectPro
           </span>
           <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#19181B] flex items-center gap-2">
             <span>You May Also Like</span>
-            <Sparkles className="w-4 h-4 text-[#C59B27]" />
+            
           </h3>
         </div>
 

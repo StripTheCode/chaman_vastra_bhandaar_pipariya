@@ -279,7 +279,7 @@ export default function Header({
                 </span>
               </button>
 
-              {/* 🌟 RIGHT CORNER LOGIN / PROFILE BUTTON */}
+              {/*  RIGHT CORNER LOGIN / PROFILE BUTTON */}
               {!user ? (
                 <Link
                   href="/login"

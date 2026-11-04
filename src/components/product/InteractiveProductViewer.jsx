@@ -9,7 +9,6 @@ import {
   ZoomOut,
   Maximize2,
   RefreshCw,
-  Sparkles,
   ChevronLeft,
   ChevronRight,
   Hand,
@@ -191,7 +190,7 @@ export default function InteractiveProductViewer({ product }) {
       {/* Top Floating Badge & Angle Pill */}
       <div className="absolute top-4 left-4 z-20 flex items-center gap-2 pointer-events-none">
         <span className="px-3 py-1 rounded-full bg-[#19181B]/90 text-white text-[10px] font-bold uppercase tracking-wider backdrop-blur-xs flex items-center gap-1.5 shadow-md">
-          <Sparkles className="w-3 h-3 text-[#E6C665]" />
+          <RotateCcw className="w-3 h-3 text-[#E6C665]" />
           <span>360° Studio View</span>
         </span>
 

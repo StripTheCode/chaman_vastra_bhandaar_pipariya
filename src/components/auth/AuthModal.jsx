@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Check, AlertCircle, Eye, EyeOff, Coins, ArrowRight, ShieldCheck } from "lucide-react";
+import { X, Check, AlertCircle, Eye, EyeOff, Coins, ArrowRight, ShieldCheck } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 export default function AuthModal() {

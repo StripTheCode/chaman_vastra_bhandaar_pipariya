@@ -3,7 +3,7 @@
 /**
  * Trendia-Style 3-Pillar Trust Banner
  * Exactly replicates the cyan-blue trust strip from Trendia:
- * 1. Express Shipping (Truck with motion arrow + 3 sparkles)
+ * 1. Express Shipping (Truck with motion arrow)
  * 2. Easy Returns & Exchange (Center carton box + 2 circular cycle arrows)
  * 3. 100% Satisfaction (Security shield + thumbs up hand gesture)
  */
@@ -22,10 +22,6 @@ export function ExpressShippingIcon({ className = "w-7 h-7 sm:w-8 sm:h-8" }) {
       className={className}
       aria-hidden="true"
     >
-      {/* 3 Speed Sparkles above the truck */}
-      <path d="M7 6v2.5M5.75 7.25h2.5" strokeWidth="1.5" />
-      <path d="M15 2v4.5M12.75 4.25h4.5" strokeWidth="1.6" />
-      <path d="M28 5v2.5M26.75 6.25h2.5" strokeWidth="1.5" />
 
       {/* Delivery Truck Cargo Trailer */}
       <rect x="3.5" y="10.5" width="16" height="12" rx="0.75" />

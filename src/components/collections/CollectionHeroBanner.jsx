@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRight, Home, Sparkles } from "lucide-react";
+import { ChevronRight, Home, Tag } from "lucide-react";
 
 export default function CollectionHeroBanner({ category, productCount }) {
   const title = category?.title || category?.name || "Luxury Collections";
@@ -50,7 +50,7 @@ export default function CollectionHeroBanner({ category, productCount }) {
           <div className="max-w-3xl">
             {/* Pill Tag */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF0E6] border border-[#E4D1BF] text-[11px] font-bold text-[#8C6510] uppercase tracking-wider mb-2.5 shadow-2xs">
-              <Sparkles className="w-3 h-3 text-[#B68D40]" />
+              <Tag className="w-3 h-3 text-[#B68D40]" />
               <span>{category?.name || "Collection"}</span>
               <span className="w-1 h-1 rounded-full bg-[#B68D40]" />
               <span>{productCount} Styles</span>

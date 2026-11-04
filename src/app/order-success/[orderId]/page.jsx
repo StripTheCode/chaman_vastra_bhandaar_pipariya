@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { Check, Package, MapPin, Coins, Truck, ArrowRight, Printer, Sparkles } from "lucide-react";
+import { Check, Package, MapPin, Coins, Truck, ArrowRight, Printer } from "lucide-react";
 
 export default async function OrderSuccessPage({ params }) {
   const { orderId } = await params;
