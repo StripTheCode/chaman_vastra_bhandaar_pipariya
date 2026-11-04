@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-playfair), "Playfair Display", "Georgia", serif;
+  --font-sans: var(--font-poppins), "Poppins", "Montserrat", var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-terracotta-50: #fdf5f5;
+  --color-terracotta-100: #f9e9ea;
+  --color-terracotta-200: #f4d4d6;
+  --color-terracotta-300: #ebb3b7;
+  --color-terracotta-400: #dc8990;
+  --color-terracotta-500: #c7616a;
+  --color-terracotta-600: #a34850;
+  --color-terracotta-700: #8e373f;
+  --color-terracotta-800: #772e35;
+  --color-terracotta-900: #642a2f;
+
+  --color-gold-500: #c59b27;
+  --color-gold-600: #a87e1b;
+
+  --color-cashmere-50: #ffffff;
+  --color-cashmere-100: #faf8f5;
+  --color-cashmere-200: #f4ece4;
+  --color-cashmere-300: #ebe2d6;
+  --color-cashmere-400: #ddd0c0;
+
+  --color-obsidian-900: #121114;
+  --color-obsidian-800: #19181b;
+  --color-obsidian-700: #29272d;
+
+  --animate-category-marquee: category-marquee 36s linear infinite;
+
+  @keyframes category-marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+:root {
+  --bg-primary: #FAF8F5;
+  --text-primary: #19181B;
+  --accent-rose: #A34850;
+  --accent-gold: #C59B27;
+}
+
+/* Trendia-Style Sleek Floating Scrollbar (Fast & Responsive Native Scroll) */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #C1C1C1 transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Chrome, Edge, Safari, Opera (Webkit) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #C1C1C1;
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888888;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Custom internal scrollbars for filter sidebar & drawers */
+.custom-scrollbar,
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #D1D5DB transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #D1D5DB;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #9CA3AF;
+}
+
+.frosted-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.text-editorial-gold {
+  background: linear-gradient(135deg, #A34850 0%, #C59B27 60%, #8E373F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Luxury Gold Foil & Shimmer Effects */
+.gold-foil-text {
+  background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(180, 83, 9, 0.2));
+}
+
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-sweep {
+  animation: sweep 3s infinite linear;
+}
+
+/* Exact Trendia Collections Card Vector Typography (100% Crisp, Zero Blur) */
+.trendia-card-title,
+.hdt-collection-title {
+  font-family: var(--font-poppins), "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.25 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45), 0 0 1px rgba(0, 0, 0, 0.5) !important;
+}
+
+@media (min-width: 1024px) {
+  .trendia-card-title,
+  .hdt-collection-title {
+    font-size: 22px !important;
+  }
+}
+
+.trendia-card-count,
+.hdt-collection-count {
+  font-family: var(--font-poppins), "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  letter-spacing: 0.01em !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Unlimited Infinite Category Auto-Scroll Marquee (Smooth 60/120fps hardware acceleration) */
+@keyframes category-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-category-marquee {
+  display: flex;
+  width: max-content;
+  animation: category-marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-category-marquee:hover,
+.animate-category-marquee:active {
+  animation-play-state: paused;
+}
