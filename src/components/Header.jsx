@@ -217,142 +217,9 @@ export default function Header({
               />
             </div>
 
-            {/* 4. Action Icons: Profile, Wishlist, Cart (Luxury Elevated Design) */}
+            {/* 4. Action Icons: Wishlist, Cart, Login in Right Corner */}
             <div className="flex items-center gap-1.5 sm:gap-2.5">
               
-              {/* Profile / Account with Luxury Flyout Menu (Desktop) */}
-              <div
-                className="relative hidden lg:block"
-                onMouseEnter={() => setProfileMenuOpen(true)}
-                onMouseLeave={() => setProfileMenuOpen(false)}
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (!user) {
-                      openAuthModal("signin");
-                    } else {
-                      setProfileMenuOpen((prev) => !prev);
-                    }
-                  }}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-[#FAF8F5] border border-transparent hover:border-[#EBE3DA] transition-all cursor-pointer group"
-                  aria-label="User Account"
-                >
-                  <div className="w-9 h-9 rounded-full bg-[#FAF8F5] border border-[#EAE3D5] flex items-center justify-center text-[#19181B] group-hover:bg-[#A34850] group-hover:text-white group-hover:border-[#A34850] transition-all duration-300 shadow-2xs">
-                    <User className="w-[18px] h-[18px] transition-transform duration-300 group-hover:scale-110" strokeWidth={1.8} />
-                  </div>
-                  <div className="flex flex-col items-start leading-none text-left">
-                    <span className="text-[13.5px] font-semibold text-[#19181B] group-hover:text-[#A34850] transition-colors truncate max-w-[100px]">
-                      {user ? user.name.split(" ")[0] : "Profile"}
-                    </span>
-                    {user && (
-                      <span className="text-[10px] text-amber-700 font-bold flex items-center gap-0.5 mt-0.5">
-                        <span>🪙</span>
-                        <span>{user.loyaltyPoints || 0}</span>
-                      </span>
-                    )}
-                  </div>
-                </button>
-
-                {/* Luxury Dropdown Menu */}
-                <AnimatePresence>
-                  {profileMenuOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute right-0 top-full mt-1.5 w-64 bg-white rounded-2xl shadow-2xl border border-[#EBE3DA] py-2 z-50 overflow-hidden"
-                    >
-                      {user ? (
-                        <>
-                          <div className="px-4 py-3 border-b border-[#F4EFEA] bg-[#FAF8F5]">
-                            <p className="text-[10px] uppercase tracking-wider text-[#A34850] font-bold">Privilege Member</p>
-                            <p className="text-sm font-bold text-[#19181B] truncate mt-0.5">{user.name}</p>
-                            <p className="text-xs text-[#7C7367] truncate">{user.email}</p>
-                            <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold">
-                              <Coins className="w-3.5 h-3.5 text-amber-600" />
-                              <span>{user.loyaltyPoints || 0} Chaman Coins</span>
-                            </div>
-                          </div>
-
-                          <div className="py-1.5 text-[13px] text-[#222]">
-                            <Link
-                              href="/account"
-                              onClick={() => setProfileMenuOpen(false)}
-                              className="flex items-center gap-2.5 px-4 py-2 hover:bg-[#FAF8F5] hover:text-[#A34850] transition-colors"
-                            >
-                              <User className="w-4 h-4 text-[#777]" />
-                              <span>My Account & Addresses</span>
-                            </Link>
-
-                            <Link
-                              href="/account?tab=orders"
-                              onClick={() => setProfileMenuOpen(false)}
-                              className="flex items-center gap-2.5 px-4 py-2 hover:bg-[#FAF8F5] hover:text-[#A34850] transition-colors"
-                            >
-                              <Package className="w-4 h-4 text-[#777]" />
-                              <span>My Orders & Tracking</span>
-                            </Link>
-
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setProfileMenuOpen(false);
-                                logout();
-                              }}
-                              className="w-full flex items-center gap-2.5 px-4 py-2 hover:bg-rose-50 hover:text-rose-700 transition-colors text-left cursor-pointer text-rose-600 border-t border-[#F4EFEA] mt-1"
-                            >
-                              <LogOut className="w-4 h-4" />
-                              <span>Sign Out</span>
-                            </button>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="px-4 py-3 border-b border-[#F4EFEA] bg-[#FAF8F5]">
-                            <p className="text-[10.5px] uppercase tracking-wider text-[#A34850] font-bold">Namaste & Welcome</p>
-                            <p className="text-xs text-[#555] mt-0.5">Sign in to unlock exclusive privilege perks</p>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setProfileMenuOpen(false);
-                                openAuthModal("signin");
-                              }}
-                              className="w-full mt-2.5 py-1.5 rounded-full bg-[#19181B] hover:bg-[#A34850] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
-                            >
-                              Sign In / Register
-                            </button>
-                          </div>
-
-                          <div className="py-1 text-[13px] text-[#222]">
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setProfileMenuOpen(false);
-                                openAuthModal("register");
-                              }}
-                              className="w-full flex items-center gap-2.5 px-4 py-2 hover:bg-amber-50/50 hover:text-amber-900 transition-colors text-left cursor-pointer text-amber-800 font-semibold"
-                            >
-                              <Coins className="w-4 h-4 text-amber-600" />
-                              <span>🎁 Claim 100 Free Coins</span>
-                            </button>
-
-                            <Link
-                              href="/collections/all"
-                              className="flex items-center gap-2.5 px-4 py-2 hover:bg-[#FAF8F5] hover:text-[#A34850] transition-colors"
-                            >
-                              <Package className="w-4 h-4 text-[#777]" />
-                              <span>Track My Order</span>
-                            </Link>
-                          </div>
-                        </>
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
               {/* Wishlist Button */}
               <button
                 type="button"
@@ -411,6 +278,100 @@ export default function Header({
                   Cart
                 </span>
               </button>
+
+              {/* 🌟 RIGHT CORNER LOGIN / PROFILE BUTTON */}
+              {!user ? (
+                <Link
+                  href="/login"
+                  className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#19181B] hover:bg-[#A34850] text-white text-xs sm:text-[13px] font-semibold tracking-wide transition-all shadow-xs cursor-pointer ml-0.5 sm:ml-1 shrink-0"
+                  title="Sign In / Log In"
+                >
+                  <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span>Login</span>
+                </Link>
+              ) : (
+                <div
+                  className="relative"
+                  onMouseEnter={() => setProfileMenuOpen(true)}
+                  onMouseLeave={() => setProfileMenuOpen(false)}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setProfileMenuOpen((prev) => !prev)}
+                    className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-[#FAF8F5] border border-transparent hover:border-[#EBE3DA] transition-all cursor-pointer group"
+                    aria-label="User Account"
+                  >
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF8F5] border border-[#EAE3D5] flex items-center justify-center text-[#19181B] group-hover:bg-[#A34850] group-hover:text-white group-hover:border-[#A34850] transition-all duration-300 shadow-2xs">
+                      <User className="w-4 h-4 sm:w-[18px] sm:h-[18px]" strokeWidth={1.8} />
+                    </div>
+                    <div className="hidden sm:flex flex-col items-start leading-none text-left">
+                      <span className="text-[13px] sm:text-[13.5px] font-semibold text-[#19181B] group-hover:text-[#A34850] transition-colors truncate max-w-[90px]">
+                        {user.name.split(" ")[0]}
+                      </span>
+                      <span className="text-[10px] text-amber-700 font-bold flex items-center gap-0.5 mt-0.5">
+                        <span>🪙</span>
+                        <span>{user.loyaltyPoints || 0}</span>
+                      </span>
+                    </div>
+                  </button>
+
+                  {/* Luxury Dropdown Menu */}
+                  <AnimatePresence>
+                    {profileMenuOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                        transition={{ duration: 0.18 }}
+                        className="absolute right-0 top-full mt-1.5 w-60 bg-white rounded-2xl shadow-2xl border border-[#EBE3DA] py-2 z-50 overflow-hidden"
+                      >
+                        <div className="px-4 py-3 border-b border-[#F4EFEA] bg-[#FAF8F5]">
+                          <p className="text-[10px] uppercase tracking-wider text-[#A34850] font-bold">Privilege Member</p>
+                          <p className="text-sm font-bold text-[#19181B] truncate mt-0.5">{user.name}</p>
+                          <p className="text-xs text-[#7C7367] truncate">{user.email}</p>
+                          <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold">
+                            <Coins className="w-3.5 h-3.5 text-amber-600" />
+                            <span>{user.loyaltyPoints || 0} Chaman Coins</span>
+                          </div>
+                        </div>
+
+                        <div className="py-1.5 text-[13px] text-[#222]">
+                          <Link
+                            href="/account"
+                            onClick={() => setProfileMenuOpen(false)}
+                            className="flex items-center gap-2.5 px-4 py-2 hover:bg-[#FAF8F5] hover:text-[#A34850] transition-colors"
+                          >
+                            <User className="w-4 h-4 text-[#777]" />
+                            <span>My Account & Addresses</span>
+                          </Link>
+
+                          <Link
+                            href="/account?tab=orders"
+                            onClick={() => setProfileMenuOpen(false)}
+                            className="flex items-center gap-2.5 px-4 py-2 hover:bg-[#FAF8F5] hover:text-[#A34850] transition-colors"
+                          >
+                            <Package className="w-4 h-4 text-[#777]" />
+                            <span>My Orders & Tracking</span>
+                          </Link>
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setProfileMenuOpen(false);
+                              logout();
+                            }}
+                            className="w-full flex items-center gap-2.5 px-4 py-2 hover:bg-rose-50 hover:text-rose-700 transition-colors text-left cursor-pointer text-rose-600 border-t border-[#F4EFEA] mt-1"
+                          >
+                            <LogOut className="w-4 h-4" />
+                            <span>Sign Out</span>
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
+
             </div>
 
           </div>
@@ -691,12 +652,9 @@ export default function Header({
                           </div>
                         </div>
                       ) : (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            openAuthModal("signin");
-                          }}
+                        <Link
+                          href="/login"
+                          onClick={() => setMobileMenuOpen(false)}
                           className="w-full flex items-center justify-between text-[#4F4A42] pt-2 border-t border-[#EBE3DA] cursor-pointer"
                         >
                           <div className="flex items-center gap-2">
@@ -706,7 +664,7 @@ export default function Header({
                           <span className="text-[12px] font-bold text-[#A34850] bg-[#FAF3EC] px-2.5 py-1 rounded-full">
                             Sign In / 100 Coins
                           </span>
-                        </button>
+                        </Link>
                       )}
 
                       {/* Contact Info Block */}

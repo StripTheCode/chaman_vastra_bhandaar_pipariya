@@ -9,7 +9,7 @@ export async function POST(request) {
     const { name, email, phone, password } = body;
 
     if (!name || !name.trim()) {
-      return apiError("Name is required", 400);
+      return apiError("Full name is required", 400);
     }
     if (!email || !email.includes("@")) {
       return apiError("A valid email address is required", 400);
@@ -18,9 +18,11 @@ export async function POST(request) {
       return apiError("Password must be at least 6 characters", 400);
     }
 
-    // Check if user already exists
     const cleanEmail = email.toLowerCase().trim();
-    const existing = await db.users.findOne((u) => u.email === cleanEmail);
+
+    // Check if user already exists by email
+    const existing = await db.users.findOne((u) => (u.email || "").toLowerCase().trim() === cleanEmail);
+
     if (existing) {
       return apiError("An account with this email already exists", 409);
     }
@@ -32,7 +34,7 @@ export async function POST(request) {
     const userDoc = UserModel.createInitial({
       name,
       email: cleanEmail,
-      phone,
+      phone: phone ? phone.trim() : "",
       passwordHash,
     });
 
@@ -70,4 +72,3 @@ export async function POST(request) {
     return apiError("Internal server error during registration", 500);
   }
 }
-
