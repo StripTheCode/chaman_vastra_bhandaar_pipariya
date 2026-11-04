@@ -20,9 +20,9 @@ export default function TopBar() {
   }, []);
 
   return (
-    <div className="bg-[#111111] text-[#E5B834] text-[13px] sm:text-[14px] font-medium py-2.5 px-4 border-b border-black w-full select-none">
+    <div className="bg-[#111111] text-[#E5B834] text-[12px] sm:text-[14px] font-medium py-2 sm:py-2.5 px-3 sm:px-4 border-b border-black w-full max-w-full overflow-hidden select-none">
       <div className="w-full flex items-center justify-center font-medium tracking-wide text-center">
-        <span className="transition-opacity duration-500 ease-in-out">
+        <span className="transition-opacity duration-500 ease-in-out text-center break-words max-w-full leading-snug">
           {ANNOUNCEMENTS[index]}
         </span>
       </div>

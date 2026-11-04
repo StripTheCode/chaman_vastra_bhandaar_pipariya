@@ -31,7 +31,7 @@ export default function PromoBanners({ onSelectCategory }) {
               <p className="text-[13.5px] sm:text-[14.5px] text-[#E2DACF] mb-6 max-w-md font-normal leading-relaxed">
                 Heirloom kalidars, custom-tailored cholis, and royal dupattas crafted for the Indian bride.
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <Link
                   href="/collections/lehengas"
                   onClick={() => onSelectCategory && onSelectCategory("lehengas")}
@@ -74,7 +74,7 @@ export default function PromoBanners({ onSelectCategory }) {
               <p className="text-[13.5px] sm:text-[14.5px] text-[#E2DACF] mb-6 max-w-md font-normal leading-relaxed">
                 Certified pure Katan silks woven with kadwa bootis, antique gold zari, and timeless pallus.
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <Link
                   href="/collections/sarees"
                   onClick={() => onSelectCategory && onSelectCategory("sarees")}

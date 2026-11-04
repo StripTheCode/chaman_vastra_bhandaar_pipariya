@@ -48,7 +48,7 @@ export default function HeroBanner({ onSelectCategory, onQuickView }) {
   const slide = SLIDES[currentSlide];
 
   return (
-    <section className="relative overflow-hidden bg-white text-white w-full">
+    <section className="relative overflow-hidden bg-white text-white w-full max-w-full">
       {/* Main Slide Stage */}
       <div className="relative h-[520px] sm:h-[620px] lg:h-[680px] w-full">
         {SLIDES.map((s, index) => (
@@ -112,7 +112,7 @@ export default function HeroBanner({ onSelectCategory, onQuickView }) {
               </div>
 
               {/* CTAs - 100% Rock-Solid Fixed Position, Zero Movement During Slide Changes */}
-              <div className="flex flex-wrap items-center gap-3.5">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5">
                 <Link
                   href={`/collections/${slide.category}`}
                   onClick={() => onSelectCategory && onSelectCategory(slide.category)}

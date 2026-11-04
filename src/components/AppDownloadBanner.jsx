@@ -6,7 +6,7 @@ export default function AppDownloadBanner() {
   return (
     <section className="py-14 bg-[#141216] text-white relative overflow-hidden border-t border-[#2B2833]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-r from-[#232029] via-[#1D1B21] to-[#141216] border border-[#3E3A46] p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-r from-[#232029] via-[#1D1B21] to-[#141216] border border-[#3E3A46] p-5 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
           
           {/* Left Text */}
           <div className="max-w-xl text-center lg:text-left">
@@ -59,7 +59,7 @@ export default function AppDownloadBanner() {
           </div>
 
           {/* Right Phone Mockup Illustration */}
-          <div className="shrink-0 flex items-center gap-4 bg-[#2A2730] p-4 rounded-2xl border border-[#3E3A46]">
+          <div className="w-full sm:w-auto flex items-center gap-3.5 sm:gap-4 bg-[#2A2730] p-3.5 sm:p-4 rounded-2xl border border-[#3E3A46]">
             <QrCode className="w-20 h-20 text-[#E6C665]" />
             <div className="text-xs">
               <span className="font-bold text-white block mb-0.5">Scan to Download</span>

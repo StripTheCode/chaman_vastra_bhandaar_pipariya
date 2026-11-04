@@ -40,7 +40,7 @@ export default function Home() {
   } = useShop();
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF8F5] pb-14 md:pb-0">
+    <div className="flex flex-col min-h-screen bg-[#FAF8F5] pb-14 md:pb-0 overflow-x-hidden w-full max-w-full">
       {/* 1. Global Announcement Ticker & Currency Bar */}
       <TopBar
         currentCurrency={currentCurrency}

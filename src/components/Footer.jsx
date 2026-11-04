@@ -37,14 +37,14 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-6">
-            <form onSubmit={handleSubscribe} className="flex gap-2 max-w-md ml-auto">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md w-full ml-auto">
               <input
                 type="tel"
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Enter your WhatsApp number (+91)..."
-                className="flex-1 px-4 py-3 bg-[#26242B] border border-[#3E3A46] rounded-full text-[13.5px] text-white placeholder-[#8C8377] focus:outline-none focus:border-[#C59B27]"
+                className="flex-1 min-w-0 px-4 py-3 bg-[#26242B] border border-[#3E3A46] rounded-full text-[13.5px] text-white placeholder-[#8C8377] focus:outline-none focus:border-[#C59B27]"
               />
               <button
                 type="submit"

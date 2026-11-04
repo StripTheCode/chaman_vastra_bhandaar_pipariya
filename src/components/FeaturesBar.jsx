@@ -215,7 +215,7 @@ export default function FeaturesBar() {
                 key={index}
                 onMouseEnter={() => setActiveTooltip(index)}
                 onMouseLeave={() => setActiveTooltip(null)}
-                className={`group relative flex flex-col items-center justify-center text-center px-2 py-1.5 cursor-default transition-all duration-300 w-full max-w-[210px] ${
+                className={`group relative flex flex-col items-center justify-center text-center px-1.5 sm:px-2 py-1.5 cursor-default transition-all duration-300 w-full max-w-[210px] min-w-0 ${
                   index === 4 ? "col-span-2 sm:col-span-1" : ""
                 }`}
               >
@@ -225,7 +225,7 @@ export default function FeaturesBar() {
                 </div>
 
                 {/* Elegant Gold-Bronze Typography */}
-                <h3 className="mt-2.5 sm:mt-3 font-sans text-[14px] sm:text-[15px] md:text-[16px] font-semibold tracking-wide text-[#92400E] group-hover:text-[#78350F] transition-colors leading-snug whitespace-nowrap">
+                <h3 className="mt-2.5 sm:mt-3 font-sans text-[13px] sm:text-[15px] md:text-[16px] font-semibold tracking-wide text-[#92400E] group-hover:text-[#78350F] transition-colors leading-snug text-center break-words sm:whitespace-nowrap">
                   {pillar.title}
                 </h3>
 

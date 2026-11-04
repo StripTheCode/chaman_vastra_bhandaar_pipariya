@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${jakarta.variable} ${poppins.variable} antialiased`}
+      className={`${playfair.variable} ${jakarta.variable} ${poppins.variable} antialiased overflow-x-hidden w-full max-w-full`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#FAF8F5] text-[#19181B] font-sans antialiased overflow-x-hidden selection:bg-[#A34850] selection:text-white">
+      <body className="min-h-screen bg-[#FAF8F5] text-[#19181B] font-sans antialiased overflow-x-hidden w-full max-w-full selection:bg-[#A34850] selection:text-white">
         <AuthProvider>
           <ShopProvider>
             {children}

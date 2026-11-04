@@ -43,6 +43,23 @@
   --accent-gold: #C59B27;
 }
 
+/* 100% Fluid Mobile Viewport Confinement (Zero Horizontal Overflow) */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Trendia-Style Sleek Floating Scrollbar (Fast & Responsive Native Scroll) */
 html {
   scrollbar-width: thin;
